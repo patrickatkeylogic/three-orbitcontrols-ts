@@ -107,11 +107,11 @@ export declare class OrbitControls extends THREE.EventDispatcher {
      * If the check passes (returns true) the passed camera will have the type THREE.PerspectiveCamera in the if branch where the check was performed.
      * @param camera Object to be checked.
      */
-    private _checkPerspectiveCamera(camera);
+    private _checkPerspectiveCamera;
     /**
      * TS typeguard. Checks whether the provided camera is OrthographicCamera.
      * If the check passes (returns true) the passed camera will have the type THREE.OrthographicCamera in the if branch where the check was performed.
      * @param camera Object to be checked.
      */
-    private _checkOrthographicCamera(camera);
+    private _checkOrthographicCamera;
 }

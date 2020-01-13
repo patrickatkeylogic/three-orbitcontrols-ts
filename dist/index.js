@@ -38,7 +38,7 @@ var EPS = 0.000001;
 *    Zoom - middle mouse, or mousewheel / touch: two finger spread or squish
 *    Pan - right mouse, or arrow keys / touch: three finger swipe
 */
-var OrbitControls = (function (_super) {
+var OrbitControls = /** @class */ (function (_super) {
     __extends(OrbitControls, _super);
     function OrbitControls(object, domElement, domWindow) {
         var _this = _super.call(this) || this;
@@ -555,7 +555,7 @@ var OrbitControls = (function (_super) {
      * @param camera Object to be checked.
      */
     OrbitControls.prototype._checkPerspectiveCamera = function (camera) {
-        return camera.isPerspectiveCamera;
+        return camera.isPerspectiveCamera || camera.type == "PerspectiveCamera";
     };
     /**
      * TS typeguard. Checks whether the provided camera is OrthographicCamera.
@@ -563,7 +563,7 @@ var OrbitControls = (function (_super) {
      * @param camera Object to be checked.
      */
     OrbitControls.prototype._checkOrthographicCamera = function (camera) {
-        return camera.isOrthographicCamera;
+        return camera.isOrthographicCamera || camera.type == "OrthographicCamera";
     };
     return OrbitControls;
 }(THREE.EventDispatcher));
